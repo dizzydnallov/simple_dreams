@@ -16,7 +16,7 @@ Simple Dreams:
       # Change the value below 6px to 0px to remove the rounded corners
       ha-card-border-radius: 6px
       # Backgrounds in folder config/www/simple_dreams
-      background-image: "url('/local/simple_dreams/simple_dreams_dark.jpg?v=10')"
+      background-image: "url('/local/simple_dreams/backgrounds/simple_dreams_dark.jpg?v=10')"
       lovelace-background: "var(--background-image) center bottom / 100% no-repeat fixed, #08101e"
       
       # Main colors
@@ -160,7 +160,7 @@ Simple Dreams:
 
       ha-card-border-radius: 6px
       # Backgrounds in folder config/www/simple_dreams
-      background-image: "url('/local/simple_dreams/simple_dreams_light.jpg?v=10')"
+      background-image: "url('/local/simple_dreams/backgrounds/simple_dreams_light.jpg?v=10')"
       lovelace-background: "var(--background-image) center bottom / 100% no-repeat fixed, #efd6ae"
       # Main colors
       primary-color: rgb(231, 144, 100)
