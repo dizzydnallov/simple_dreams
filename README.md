@@ -97,15 +97,21 @@ The following HACS repositories pair beautifully with **Simple Dreams** and help
 ## Recommended HACS Repositories
 
 ### 1) Mushroom
-Minimal, modern Lovelace cards that match the theme’s minimalist aesthetic.
-- **Repo:** `piitaya/lovelace-mushroom`
-- **Install (HACS → Frontend):** Search “Mushroom”, install, then **Reload** resources.
 
-**Tip:** Use fewer, richer Mushroom cards (chips, entity, climate, lights) in the **top 60–70%** of the view for best results.
+Minimal, modern Lovelace cards that match the theme’s minimalist aesthetic.  
+- **Repo:** `piitaya/lovelace-mushroom`  
+- **Install (HACS → Frontend):** Search **“Mushroom”**, install, then **Reload resources**.
+
+**Tips**
+- Use **fewer, richer** Mushroom cards (chips, entity, climate, lights) in the **top 60–70%** of the view.
+- Use **conditionals** to only show cards when they’re **important** and **necessary** (e.g., show the alarm card only when armed, or show a leak sensor card only when it’s detecting).  Conditionals can applied when setting up/ editing a card (under visibility tab)
+
+<img width="2048" height="1080" alt="image" src="https://github.com/user-attachments/assets/d1a8de69-1d49-4f35-ba11-6949a466c3fe" />
 
 ---
 
 ### 2) card-mod
+
 Lets you apply CSS to Home Assistant UI elements for glass/blur, borders, and polish.
 - **Repo:** `thomasloven/lovelace-card-mod`
 - **Install (HACS → Frontend):** Search “card-mod”, install, then **Reload** resources.
@@ -119,3 +125,27 @@ card_mod:
     ha-card {
       backdrop-filter: blur(20px);
     }
+```
+### 3) Simple Swipe Card
+Create horizontal or vertical swipeable stacks to keep the top area clean while giving quick access to related cards.
+
+- **Repo:** `bramkragten/swipe-card`
+- **Install (HACS → Frontend):** Search **“Swipe Card”**, install, then **Reload resources**.
+
+---
+
+### 4) Stack In Card
+Nest multiple cards inside a single frame
+
+- **Repo:** `custom-cards/stack-in-card`
+- **Install (HACS → Frontend):** Search **“Stack In Card”**, install, then **Reload resources**.
+
+---
+
+### 5) Mini Graph Card
+Compact, configurable time-series visual for quick trend scanning without heavy visuals.
+
+- **Repo:** `kalkih/mini-graph-card`
+- **Install (HACS → Frontend):** Search **“Mini Graph Card”**, install, then **Reload resources**.
+
+
