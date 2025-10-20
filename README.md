@@ -355,7 +355,7 @@ cards:
         }
 ```
 
-### 1) Sliding Room Temperature / Humidity Cards
+### 2) Sliding Room Temperature / Humidity Cards
 ![Room](https://github.com/user-attachments/assets/b681c342-ac1a-49a0-a7fd-b190fceb793d)
 
 A clean, central **carousel** that cycles through room panels showing **temperature** and **humidity** with transparent styling to match the Simple Dreams theme. Swipe manually or let it auto-rotate.
@@ -383,7 +383,7 @@ A clean, central **carousel** that cycles through room panels showing **temperat
 
 ---
 
-#### YAML (generic entities)
+#### YAML
 ```yaml
 # If you installed Swipe Card, change the next line to:
 # type: custom:swipe-card
@@ -524,3 +524,67 @@ cards:
                 .graph { opacity: 0.3; }
 ```
 
+### 3) Simple Date / Time
+<img width="1000" height="192" alt="image" src="https://github.com/user-attachments/assets/401a72d2-ef40-4f5b-8b51-b7b8555eae0c" />
+
+A clean, minimal date–time display.  
+**Placement:** Top-right is recommended to stay within the theme’s **top utility zone**.
+
+---
+
+#### Dependencies (HACS → Frontend, then **Reload resources**)
+- `piitaya/lovelace-mushroom`
+- `thomasloven/lovelace-card-mod`
+
+> **Note on live updates:**  
+> To ensure the time updates every minute, make sure you have the **Time & Date** integration enabled so `sensor.time` exists.  
+> - **Settings → Devices & Services → + Add Integration → Time & Date**  
+> This gives you `sensor.time`/`sensor.date` and triggers template updates.
+
+---
+
+#### What you can change
+- **Format:** Choose 12-hour (`%I:%M %p`) or 24-hour (`%H:%M`).  
+- **Locale style:**  
+  - UK/EU style date: `%A, %d %B` → e.g., *Monday, 20 October*  
+  - US style date: `%A, %B %d` → e.g., *Monday, October 20*
+- **Alignment:** `alignment: end` keeps it right-aligned; use `center` or `start` if preferred.
+- **Sizes:** Adjust `--title-font-size` and `--subtitle-font-size`.
+
+---
+
+#### YAML (12-hour time, US-style date)
+```yaml
+type: custom:mushroom-template-card
+primary: "{{ now().strftime('%I:%M %p').lstrip('0') }}"
+secondary: "{{ now().strftime('%A, %B %d') }}"
+entity: sensor.time
+layout: vertical
+alignment: end
+card_mod:
+  style: |
+    ha-card {
+      --title-font-size: 38px;
+      --subtitle-font-size: 20px;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0 8px;
+    }
+```
+
+## Credits & Thanks
+
+**Core dependencies (HACS)**
+- `piitaya/lovelace-mushroom`
+- `thomasloven/lovelace-card-mod`
+- `custom-cards/stack-in-card`
+- `kalkih/mini-graph-card`
+- `pkissling/clock-weather-card`
+- `nutteloost/simple-swipe-card`
+
+**Theme inspiration**
+- Huge thanks to **tgcowell/waves** — this theme began as a fork/inspiration of *Waves*. While many parts have evolved, some elements and sensibilities remain. 🙏
+
+**Home Assistant**
+- Huge thanks to everyone who continues to develop and maintain **Home Assistant** — core contributors, frontend and backend teams, integration authors, and the wider community. Your work makes projects like this possible. 🙏
