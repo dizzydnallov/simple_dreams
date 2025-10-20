@@ -1,8 +1,9 @@
-![Light Theme](https://github.com/user-attachments/assets/8aab6d86-6213-49bb-8de9-4f4368dc2764)
-
-
 # Introduction
 Simple Dreams — a minimalist Home Assistant theme
+
+![Light Theme](https://github.com/user-attachments/assets/8aab6d86-6213-49bb-8de9-4f4368dc2764)
+
+![Dark Theme](https://github.com/user-attachments/assets/cd60d334-a4d9-4b31-b8d1-53aebb1cb9c7)
 
 ## Purpose
 
@@ -28,9 +29,9 @@ Simple Dreams is provided with an elegant background where the bottom portion is
 * Safe areas:
     - Top: place your most important content within the top 60–70% of the screen.
     - Bottom: keep the lower 30–40% free of cards, pop-ups, or persistent chips.
-* Gutters & spacing: Use consistent horizontal margins (16–24 px) and a vertical rhythm (8 px base scale).
-* Density: Favour 2–3 columns on tablets and 3–4 on large screens. One column for phones.
-* Z-order: Keep headers, tabs, and quick actions above the safe line; toast/snackbar messages should appear near the top-centre.
+* Density: Favour 2–3 columns on tablets and 3–4 on large screens. One column for phones
+
+> Note: While the theme works on smaller screens in portrait orientation (e.g., phones), it’s primarily optimised for tablets. Ongoing updates will continue to improve the mobile experience.
 
 ---
 
