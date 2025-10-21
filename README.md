@@ -537,17 +537,16 @@ A clean, minimal date–time display.
 - `thomasloven/lovelace-card-mod`
 
 > **Note on live updates:**  
-> To ensure the time updates every minute, make sure you have the **Time & Date** integration enabled so `sensor.time` exists.  
-> - **Settings → Devices & Services → + Add Integration → Time & Date**  
-> This gives you `sensor.time`/`sensor.date` and triggers template updates.
+> Using `now()` inside `mushroom-title-card` updates automatically (about once per minute). No entity is required.  
+> If your dashboard ever appears to pause updates, optionally enable the **Time & Date** integration to help keep the UI “ticking”.
 
 ---
 
 #### What you can change
 - **Format:** Choose 12-hour (`%I:%M %p`) or 24-hour (`%H:%M`).  
 - **Locale style:**  
-  - UK/EU style date: `%A, %d %B` → e.g., *Monday, 20 October*  
-  - US style date: `%A, %B %d` → e.g., *Monday, October 20*
+  - UK/EU date: `%A, %d %B` → e.g., *Monday, 20 October*  
+  - US date: `%A, %B %d` → e.g., *Monday, October 20*
 - **Alignment:** `alignment: end` keeps it right-aligned; use `center` or `start` if preferred.
 - **Sizes:** Adjust `--title-font-size` and `--subtitle-font-size`.
 
@@ -555,21 +554,15 @@ A clean, minimal date–time display.
 
 #### YAML (12-hour time, US-style date)
 ```yaml
-type: custom:mushroom-template-card
-primary: "{{ now().strftime('%I:%M %p').lstrip('0') }}"
-secondary: "{{ now().strftime('%A, %B %d') }}"
-entity: sensor.time
-layout: vertical
+type: custom:mushroom-title-card
+title: "{{ now().strftime('%I:%M %p') }}"
 alignment: end
+subtitle: "{{ now().strftime('%A, %B %d') }}"
 card_mod:
   style: |
     ha-card {
       --title-font-size: 38px;
       --subtitle-font-size: 20px;
-      background: transparent;
-      border: none;
-      box-shadow: none;
-      padding: 0 8px;
     }
 ```
 
@@ -584,7 +577,7 @@ card_mod:
 - `nutteloost/simple-swipe-card`
 
 **Theme inspiration**
-- Huge thanks to **tgcowell/waves** — this theme began as a fork/inspiration of *Waves*. While many parts have evolved, some elements and sensibilities remain. 🙏
+- Big thanks to **tgcowell/waves** — this theme began as a fork/inspiration of *Waves*. While many parts have evolved, some elements and sensibilities remain. 🙏
 
 **Home Assistant**
 - Huge thanks to everyone who continues to develop and maintain **Home Assistant** — core contributors, frontend and backend teams, integration authors, and the wider community. Your work makes projects like this possible. 🙏
